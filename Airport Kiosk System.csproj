@@ -9,4 +9,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="images\InitScreenImage.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\InitScreenImage.jpeg" />
+  </ItemGroup>
+
 </Project>

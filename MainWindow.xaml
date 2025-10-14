@@ -5,8 +5,119 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Airport_Kiosk_System"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280">
+        Title="Airport Kiosk System" Height="720" Width="1280"
+        ResizeMode="CanMinimize">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
 
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.25*"/>
+                <RowDefinition Height="0.35*" />
+                <RowDefinition Height="0.325*"/>
+                <RowDefinition Height="0.075*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="0.8*" />
+                <ColumnDefinition Width="0.1*" />
+            </Grid.ColumnDefinitions>
+
+            <Viewbox Grid.Row="0" Grid.Column="1">
+                <TextBlock VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           TextWrapping="Wrap"
+                           Foreground="RoyalBlue">
+            
+                    <TextBlock.Text>
+                        Welcome, let's start your journey.
+                    </TextBlock.Text>
+                </TextBlock>
+            </Viewbox>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.25*"/>
+                    <RowDefinition Height="0.125*"/>
+                    <RowDefinition Height="0.25*"/>
+                    <RowDefinition Height="0.125*"/>
+                    <RowDefinition Height="0.25*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.25*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0"
+                        Grid.Column="1"
+                        Style="{StaticResource InitScreenButton}">
+                    
+                    <Button.Content>
+                        Check In
+                    </Button.Content>
+                </Button>
+                
+                <Button Grid.Row="2"
+                        Grid.Column="1"
+                        Style="{StaticResource InitScreenButton}">
+                    
+                    <Button.Content>
+                        Book Flights
+                    </Button.Content>
+                </Button>
+
+                <Button Grid.Row="4"
+                        Grid.Column="1"
+                        Style="{StaticResource InitScreenButton}"
+                        Click="onExitButtonClicked">
+
+                    <Button.Content>
+                        Exit
+                    </Button.Content>
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.25*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Viewbox Grid.Row="0" Grid.Column="1">
+                    <TextBlock Style="{StaticResource HyperlinkToMethod}">
+                        <TextBlock.Text>
+                            Not a traveller? Click here for admin view.
+                        </TextBlock.Text>
+                    </TextBlock>
+                </Viewbox>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center">
+                <Image Source="/images/InitScreenImage.jpeg"></Image>
+            </Viewbox>
+
+            <Rectangle>
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#050521" Offset="0.0"></GradientStop>
+                        <GradientStop Color="#05052145" Offset="0.9"></GradientStop>
+                        <GradientStop Color="Transparent" Offset="1.0"></GradientStop>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
     </Grid>
 </Window>

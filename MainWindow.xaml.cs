@@ -20,5 +20,9 @@ namespace Airport_Kiosk_System
         {
             InitializeComponent();
         }
+
+        private void onExitButtonClicked(object sender, RoutedEventArgs e) {
+            Application.Current.Shutdown(0);
+        }
     }
 }
