@@ -16,6 +16,8 @@ namespace Airport_Kiosk_System
     /// </summary>
     public partial class MainWindow : Window
     {
+        public bool isFullscreened = false;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -23,6 +25,30 @@ namespace Airport_Kiosk_System
 
         private void onExitButtonClicked(object sender, RoutedEventArgs e) {
             Application.Current.Shutdown(0);
+        }
+
+        private void onFullscreenClicked(object sender, RoutedEventArgs e) {
+            if (isFullscreened) {
+                exitFullscreenMode();
+            }
+
+            else {
+                enterFullscreenMode();
+            }
+        }
+
+        private void enterFullscreenMode() {
+            this.WindowState = WindowState.Maximized;
+            this.WindowStyle = WindowStyle.None;
+            this.Topmost = true;
+            this.isFullscreened = true;
+        }
+
+        private void exitFullscreenMode() {
+            this.WindowState = WindowState.Normal;
+            this.WindowStyle = WindowStyle.SingleBorderWindow;
+            this.Topmost = false;
+            this.isFullscreened = false;
         }
     }
 }

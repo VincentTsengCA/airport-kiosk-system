@@ -4,21 +4,31 @@
              xmlns:local="clr-namespace:Airport_Kiosk_System"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <FontFamily x:Key="NotoSans">
+            pack://application:,,,/fonts/#Noto Sans
+        </FontFamily>
+
+        <FontFamily x:Key="NotoSansItalic">
+            pack://application:,,,/fonts/#Noto Sans Italic
+        </FontFamily>
+
         <Style TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="Noto Sans"></Setter>
+            <Setter Property="FontFamily" Value="{StaticResource NotoSans}"></Setter>
         </Style>
 
         <Style BasedOn="{StaticResource {x:Type TextBlock}}"
                TargetType="TextBlock"
                x:Key="HyperlinkToMethod">
 
-            <Setter Property="Foreground" Value="Navy"></Setter>
+            <Setter Property="Foreground" Value="SkyBlue"></Setter>
             <Setter Property="TextDecorations" Value="Underline"></Setter>
+            <Setter Property="FontWeight" Value="Light"></Setter>
+            <Setter Property="Opacity" Value="0.75"></Setter>
             
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Cursor" Value="Hand"></Setter>
-                    <Setter Property="Foreground" Value="Blue"></Setter>
+                    <Setter Property="Opacity" Value="1.00"></Setter>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -41,9 +51,10 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            
-            <Setter Property="FontFamily" Value="Noto Sans"></Setter>
+
+            <Setter Property="FontFamily" Value="{StaticResource NotoSans}"></Setter>
             <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontWeight" Value="Light"></Setter>
             <Setter Property="Foreground" Value="#222222"></Setter>
             <Setter Property="Background" Value="#ccccd0"></Setter>
             <Setter Property="BorderBrush" Value="DimGray"></Setter>
@@ -60,6 +71,25 @@
                     <Setter Property="Foreground" Value="#111111"></Setter>
                     <Setter Property="Background" Value="#bbbbc0"></Setter>
                     <Setter Property="BorderBrush" Value="DimGray"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style BasedOn="{StaticResource {x:Type TextBlock}}"
+               TargetType="TextBlock"
+               x:Key="FullscreenButton">
+
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontFamily" Value="{StaticResource NotoSans}"></Setter>
+            <Setter Property="FontWeight" Value="Thin"></Setter>
+            <Setter Property="Opacity" Value="0.6"></Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"></Setter>
+                    <Setter Property="Opacity" Value="1.00"></Setter>
                 </Trigger>
             </Style.Triggers>
         </Style>

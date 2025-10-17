@@ -10,10 +10,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="fonts\NotoSans-Italic-VariableFont_wdth,wght.ttf" />
+    <None Remove="fonts\NotoSans-VariableFont_wdth,wght.ttf" />
     <None Remove="images\InitScreenImage.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="fonts\NotoSans-Italic-VariableFont_wdth,wght.ttf" />
+    <Resource Include="fonts\NotoSans-VariableFont_wdth,wght.ttf">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
     <Resource Include="images\InitScreenImage.jpeg" />
   </ItemGroup>
 

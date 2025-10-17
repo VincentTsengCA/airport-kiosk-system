@@ -13,6 +13,15 @@
             <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
 
+        <Rectangle Grid.Column="0">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,0">
+                    <GradientStop Color="#050521" Offset="0.0"></GradientStop>
+                    <GradientStop Color="#110524" Offset="1.0"></GradientStop>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.25*"/>
@@ -31,7 +40,8 @@
                 <TextBlock VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            TextWrapping="Wrap"
-                           Foreground="RoyalBlue">
+                           Foreground="White"
+                           FontWeight="Thin">
             
                     <TextBlock.Text>
                         Welcome, let's start your journey.
@@ -59,16 +69,40 @@
                         Style="{StaticResource InitScreenButton}">
                     
                     <Button.Content>
-                        Check In
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.25*" />
+                                <RowDefinition Height="0.5*" />
+                                <RowDefinition Height="0.25*" />
+                            </Grid.RowDefinitions>
+                            
+                            <Viewbox Grid.Row="1">
+                                <TextBlock>
+                                    Check In
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
                     </Button.Content>
                 </Button>
                 
                 <Button Grid.Row="2"
                         Grid.Column="1"
                         Style="{StaticResource InitScreenButton}">
-                    
+
                     <Button.Content>
-                        Book Flights
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.25*" />
+                                <RowDefinition Height="0.5*" />
+                                <RowDefinition Height="0.25*" />
+                            </Grid.RowDefinitions>
+
+                            <Viewbox Grid.Row="1">
+                                <TextBlock>
+                                    Book Flights
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
                     </Button.Content>
                 </Button>
 
@@ -78,7 +112,19 @@
                         Click="onExitButtonClicked">
 
                     <Button.Content>
-                        Exit
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.25*" />
+                                <RowDefinition Height="0.5*" />
+                                <RowDefinition Height="0.25*" />
+                            </Grid.RowDefinitions>
+
+                            <Viewbox Grid.Row="1">
+                                <TextBlock>
+                                    Exit
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
                     </Button.Content>
                 </Button>
             </Grid>
@@ -98,6 +144,27 @@
                     <TextBlock Style="{StaticResource HyperlinkToMethod}">
                         <TextBlock.Text>
                             Not a traveller? Click here for admin view.
+                        </TextBlock.Text>
+                    </TextBlock>
+                </Viewbox>
+            </Grid>
+
+            <Grid Grid.Row="3" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.9*" />
+                    <RowDefinition Height="0.1*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.01*" />
+                    <ColumnDefinition Width="0.99*" />
+                </Grid.ColumnDefinitions>
+
+                <Viewbox Grid.Row="0" Grid.Column="1">
+                    <TextBlock Style="{StaticResource FullscreenButton}"
+                               MouseLeftButtonUp="onFullscreenClicked">
+                        <TextBlock.Text>
+                            &#x26F6;
                         </TextBlock.Text>
                     </TextBlock>
                 </Viewbox>
