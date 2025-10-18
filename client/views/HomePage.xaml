@@ -1,0 +1,193 @@
+<Page x:Class="Airport_Kiosk_System.Views.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:local="clr-namespace:Airport_Kiosk_System.Views"
+      mc:Ignorable="d"
+      Title="Airport Kiosk System" d:DesignHeight="720" d:DesignWidth="1280">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Grid.Column="0">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,0">
+                    <GradientStop Color="#050521" Offset="0.0"></GradientStop>
+                    <GradientStop Color="#110524" Offset="1.0"></GradientStop>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.25*"/>
+                <RowDefinition Height="0.35*" />
+                <RowDefinition Height="0.325*"/>
+                <RowDefinition Height="0.075*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="0.8*" />
+                <ColumnDefinition Width="0.1*" />
+            </Grid.ColumnDefinitions>
+
+            <Viewbox Grid.Row="0" Grid.Column="1">
+                <TextBlock VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           TextWrapping="Wrap"
+                           Foreground="White"
+                           FontWeight="Thin">
+
+                    <TextBlock.Text>
+                        Welcome, let's start your journey.
+                    </TextBlock.Text>
+                </TextBlock>
+            </Viewbox>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.25*"/>
+                    <RowDefinition Height="0.125*"/>
+                    <RowDefinition Height="0.25*"/>
+                    <RowDefinition Height="0.125*"/>
+                    <RowDefinition Height="0.25*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.25*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0"
+                        Grid.Column="1"
+                        Style="{StaticResource InitScreenButton}">
+
+                    <Button.Content>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.25*" />
+                                <RowDefinition Height="0.5*" />
+                                <RowDefinition Height="0.25*" />
+                            </Grid.RowDefinitions>
+
+                            <Viewbox Grid.Row="1">
+                                <TextBlock>
+                                    Check In
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+
+                <Button Grid.Row="2"
+                        Grid.Column="1"
+                        Style="{StaticResource InitScreenButton}">
+
+                    <Button.Content>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.25*" />
+                                <RowDefinition Height="0.5*" />
+                                <RowDefinition Height="0.25*" />
+                            </Grid.RowDefinitions>
+
+                            <Viewbox Grid.Row="1">
+                                <TextBlock>
+                                    Book Flights
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+
+                <Button Grid.Row="4"
+                        Grid.Column="1"
+                        Style="{StaticResource InitScreenButton}"
+                        Command="{Binding exitCommand}">
+
+                    <Button.Content>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.25*" />
+                                <RowDefinition Height="0.5*" />
+                                <RowDefinition Height="0.25*" />
+                            </Grid.RowDefinitions>
+
+                            <Viewbox Grid.Row="1">
+                                <TextBlock>
+                                    Exit
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+            </Grid>
+
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.25*"/>
+                </Grid.ColumnDefinitions>
+
+                <Viewbox Grid.Row="0" Grid.Column="1">
+                    <TextBlock Style="{StaticResource HyperlinkToMethod}">
+                        <TextBlock.Text>
+                            Not a traveller? Click here for admin view.
+                        </TextBlock.Text>
+                    </TextBlock>
+                </Viewbox>
+            </Grid>
+
+            <Grid Grid.Row="3" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.9*" />
+                    <RowDefinition Height="0.1*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.01*" />
+                    <ColumnDefinition Width="0.99*" />
+                </Grid.ColumnDefinitions>
+
+                <Viewbox Grid.Row="0" Grid.Column="1">
+                    <TextBlock Style="{StaticResource FullscreenButton}">
+                        <TextBlock.Text>
+                            &#x26F6;
+                        </TextBlock.Text>
+
+                        <TextBlock.InputBindings>
+                            <MouseBinding MouseAction="LeftClick"
+                                          Command="{Binding fullscreenCommand}"></MouseBinding>
+                        </TextBlock.InputBindings>
+                    </TextBlock>
+                </Viewbox>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center">
+                <Image Source="/images/InitScreenImage.jpeg"></Image>
+            </Viewbox>
+
+            <Rectangle>
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#050521" Offset="0.0"></GradientStop>
+                        <GradientStop Color="#05052145" Offset="0.9"></GradientStop>
+                        <GradientStop Color="Transparent" Offset="1.0"></GradientStop>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+    </Grid>
+</Page>

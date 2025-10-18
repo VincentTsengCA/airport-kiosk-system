@@ -23,4 +23,8 @@
     <Resource Include="images\InitScreenImage.jpeg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="models\" />
+  </ItemGroup>
+
 </Project>
