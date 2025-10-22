@@ -3,9 +3,9 @@ using System.Windows.Controls;
 
 namespace Airport_Kiosk_System.Views {
     public partial class HomePage : Page {
-        public HomePage() {
+        public HomePage(HomePageViewModel viewModel) {
             InitializeComponent();
-            this.DataContext = new HomePageViewModel();
+            this.DataContext = viewModel;
         }
     }
 }

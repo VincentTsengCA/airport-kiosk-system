@@ -5,7 +5,8 @@ using System.Windows.Input;
 
 namespace Airport_Kiosk_System.ViewModels.Base {
     public abstract class BaseViewModel : INotifyPropertyChanged {
-        public static MainWindow mainWindow;
+        public static MainWindow mainWindow { get; set; }
+        public static MainWindowViewModel mainWindowViewModel { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
         
         protected void onPropertyChanged([CallerMemberName] string propertyName = null) {

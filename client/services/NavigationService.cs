@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 
 namespace Airport_Kiosk_System.Services {
-    public partial class NavigationService {
+    public class NavigationService {
         private readonly Frame frame;
 
         public NavigationService(Frame frame) {

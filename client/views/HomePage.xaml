@@ -108,7 +108,7 @@
                 <Button Grid.Row="4"
                         Grid.Column="1"
                         Style="{StaticResource InitScreenButton}"
-                        Command="{Binding exitCommand}">
+                        Command="{Binding mainWindowViewModel.exitCommand}">
 
                     <Button.Content>
                         <Grid>
@@ -167,7 +167,7 @@
 
                         <TextBlock.InputBindings>
                             <MouseBinding MouseAction="LeftClick"
-                                          Command="{Binding fullscreenCommand}"></MouseBinding>
+                                          Command="{Binding mainWindowViewModel.fullscreenCommand}"></MouseBinding>
                         </TextBlock.InputBindings>
                     </TextBlock>
                 </Viewbox>
